@@ -40,7 +40,7 @@
         .logo { font-size: 1.8rem; margin: 0; font-weight: bold; }
 
         .container {
-            max-width: 550px;
+            max-width: 500px;
             width: 95%;
             margin-top: 20px;
             padding-bottom: 50px;
@@ -51,71 +51,88 @@
             border-radius: 15px;
             padding: 15px;
             text-align: center;
-            margin-bottom: 20px;
-            border-right: 5px solid var(--whatsapp-green);
+            margin-bottom: 25px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
+        /* قائمة القنوات (بطاقات كبيرة) */
         .channel-list {
-            display: grid;
-            gap: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .channel-card {
             background-color: var(--white);
-            border-radius: 12px;
-            padding: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            border-radius: 20px;
+            overflow: hidden;
             text-decoration: none;
             color: inherit;
-            transition: 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
         }
 
         .channel-card:hover {
-            background-color: #f9f9f9;
-            transform: scale(1.01);
+            transform: translateY(-5px);
         }
 
-        .info-part {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        /* صورة القناة الكبيرة */
         .channel-img {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+            width: 100%;
+            height: 250px; /* حجم الصورة الكبير */
             object-fit: cover;
-            border: 2px solid var(--whatsapp-green);
+            border-bottom: 4px solid var(--whatsapp-green);
         }
 
-        .name-part h3 {
-            margin: 0;
-            font-size: 1rem;
+        /* تفاصيل القناة */
+        .channel-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .channel-details h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
             color: var(--whatsapp-dark-green);
         }
 
-        .name-part p {
-            margin: 3px 0 0;
-            font-size: 0.8rem;
-            color: #777;
+        .channel-details p {
+            margin: 0 0 15px 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
         }
 
-        .join-icon {
-            color: var(--whatsapp-green);
-            font-size: 1.2rem;
+        /* أيقونة/زر الانضمام أسفل الوصف */
+        .join-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 10px 0;
+            border-radius: 12px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+
+        .join-btn:active {
+            transform: scale(0.98);
         }
 
         .footer {
             text-align: center;
             padding: 30px;
             color: #888;
-            font-size: 0.85rem;
+        }
+
+        .contact-link {
+            color: var(--whatsapp-dark-green);
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -127,217 +144,180 @@
 
     <div class="container">
         <div class="site-description">
-            <p>🔥 <b>أفضل قنوات واتساب لعام 2026</b> <br> اختر قناتك المفضلة وانضم إلينا الآن</p>
+            <p>🔥 <b>أفضل قنوات واتساب لعام 2026</b> <br> محتوى حصري ومتجدد يومياً</p>
         </div>
 
         <div class="channel-list">
             
             <a href="https://whatsapp.com/channel/0029VatYr76CMY082P6Hmf2R" class="channel-card">
-                <div class="info-part">
-                    <img src="1.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>عالم الأنمي:⛩️Anime Wave:</h3>
-                        <p>عالم الأنمي والخيال ✨</p>
-                    </div>
+                <img src="1.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>عالم الأنمي:⛩️Anime Wave:</h3>
+                    <p>أحدث حلقات الأنمي، خلفيات، وأخبار الأوتاكو أولاً بأول ✨</p>
+                    <div class="join-btn">انضم للقناة الآن 🚀</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6w8HBDTkJxjq3NQR3l" class="channel-card">
-                <div class="info-part">
-                    <img src="2.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>أنس الإيمان 🕌</h3>
-                        <p>نفحات إيمانية وذكر 📖</p>
-                    </div>
+                <img src="2.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>أنس الإيمان 🕌</h3>
+                    <p>آيات عطرة، أحاديث نبوية، ومواعظ تريح القلوب 📖</p>
+                    <div class="join-btn">انضم للقناة الآن ✨</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6cShqBqbrE8S5ALt1o" class="channel-card">
-                <div class="info-part">
-                    <img src="3.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>جدريات وكتاباتي❤️‍🩹</h3>
-                        <p>بوح القلم ووجع الحروف ✍️</p>
-                    </div>
+                <img src="3.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>جدريات وكتاباتي ❤️‍🩹</h3>
+                    <p>خواطر أدبية وكتابات تلامس الواقع والروح ✍️</p>
+                    <div class="join-btn">انضم للقناة الآن 📝</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbA9mFJ30LKTh1EPdH33" class="channel-card">
-                <div class="info-part">
-                    <img src="4.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>خواطر الحب والحزن🥀💔</h3>
-                        <p>بين مرارة الفقد وحلاوة اللقاء 🔗</p>
-                    </div>
+                <img src="4.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>خواطر الحب والحزن 🥀💔</h3>
+                    <p>أرقى الكلمات التي تصف مشاعر الفقد والحنين 🔗</p>
+                    <div class="join-btn">انضم للقناة الآن ❤️</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbBI66nBfxoB8F4GgT3j" class="channel-card">
-                <div class="info-part">
-                    <img src="5.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>مقهى البؤساء ☕🎻</h3>
-                        <p>ركن الهادئين والمتعبين 🕯️</p>
-                    </div>
+                <img src="5.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>مقهى البؤساء ☕🎻</h3>
+                    <p>قصص وخواطر لكل القلوب المتعبة التي تبحث عن ملجأ 🕯️</p>
+                    <div class="join-btn">انضم للقناة الآن 🎻</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbBHAJE6mYPD2i3s833U" class="channel-card">
-                <div class="info-part">
-                    <img src="6.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>اجواء الشتاء 🌨️☕</h3>
-                        <p>دفء الذكريات والمطر ☔</p>
-                    </div>
+                <img src="6.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>اجواء الشتاء 🌨️☕</h3>
+                    <p>صور وحالات تعبر عن جمال المطر ودفء الشتاء ☔</p>
+                    <div class="join-btn">انضم للقناة الآن 🌨️</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb7bXXlFCCoQ67PCXy16" class="channel-card">
-                <div class="info-part">
-                    <img src="7.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>غامبول الفيلسوف 😼💙</h3>
-                        <p>حكم واقعية بطريقة غامبولية 🍕</p>
-                    </div>
+                <img src="7.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>غامبول الفيلسوف 😼💙</h3>
+                    <p>منوعات غامبول الساخرة وحكم واقعية مضحكة 🍕</p>
+                    <div class="join-btn">انضم للقناة الآن 🔥</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbAufHN3wtbEVjWzDy2f/721" class="channel-card">
-                <div class="info-part">
-                    <img src="8.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>معلومات تافهه 🤔💡</h3>
-                        <p>أشياء غريبة لا تهمك لكنها ممتعة 🧠</p>
-                    </div>
+                <img src="8.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>معلومات تافهه 🤔💡</h3>
+                    <p>هل تعلم؟ معلومات غريبة وعجيبة ستدهشك 🧠</p>
+                    <div class="join-btn">انضم للقناة الآن 💡</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6Rm56EwEk4RqWWhG0d/531" class="channel-card">
-                <div class="info-part">
-                    <img src="9.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>روايات وقصص يمنيه 🇾🇪📚</h3>
-                        <p>عبق التراث اليمني في قصص 🏺</p>
-                    </div>
+                <img src="9.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>روايات وقصص يمنيه 🇾🇪📚</h3>
+                    <p>أجمل الروايات باللهجة اليمنية والتراثية 🏺</p>
+                    <div class="join-btn">انضم للقناة الآن 🇾🇪</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbAODsB6hENl7DPwhT0K/1182" class="channel-card">
-                <div class="info-part">
-                    <img src="10.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>قصص حب ورومنسي 👩‍❤️‍👨💖</h3>
-                        <p>روايات تأخذك لعالم آخر 🕊️</p>
-                    </div>
+                <img src="10.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>قصص حب ورومنسي 👩‍❤️‍👨💖</h3>
+                    <p>قصص رومانسية واقعية تأخذك لعالم الخيال 🕊️</p>
+                    <div class="join-btn">انضم للقناة الآن 💞</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6eEZY6xCSII3LIk32Z/119" class="channel-card">
-                <div class="info-part">
-                    <img src="11.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>نكت وصور مضحكه 😂📷</h3>
-                        <p>انسى همومك واضحك من قلبك 🤡</p>
-                    </div>
+                <img src="11.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>نكت وصور مضحكه 😂📷</h3>
+                    <p>جرعة يومية من الضحك والملصقات المضحكة 🤡</p>
+                    <div class="join-btn">انضم للقناة الآن 😂</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6JZ3oFsn0jKspp2j0G/690" class="channel-card">
-                <div class="info-part">
-                    <img src="12.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>حكم رجل عجوز 👴📜</h3>
-                        <p>خلاصة التجارب والسنوات 🗝️</p>
-                    </div>
+                <img src="12.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>حكم رجل عجوز 👴📜</h3>
+                    <p>كلمات من ذهب لخصت تجارب الحياة الطويلة 🗝️</p>
+                    <div class="join-btn">انضم للقناة الآن 📜</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VazNYGU3bbUvGvIZtQ1X/1765" class="channel-card">
-                <div class="info-part">
-                    <img src="13.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>عالم الحب والحزن 💞💔</h3>
-                        <p>تناقض المشاعر في مكان واحد 🌓</p>
-                    </div>
+                <img src="13.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>عالم الحب والحزن 💞💔</h3>
+                    <p>خلفيات وحالات تعبر عن الحب والوجع في آن واحد 🌓</p>
+                    <div class="join-btn">انضم للقناة الآن ❤️‍🩹</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6v4OVHltY5hf1x2H1f/170" class="channel-card">
-                <div class="info-part">
-                    <img src="14.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>د.هالة سمير 👩‍⚕️💎</h3>
-                        <p>تربية واجتماعيات وبناء أسرة 🏠</p>
-                    </div>
+                <img src="14.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>د.هالة سمير 👩‍⚕️💎</h3>
+                    <p>دروس في التربية الأسرية والاستقرار الاجتماعي 🏠</p>
+                    <div class="join-btn">انضم للقناة الآن 💎</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbB8GflCHDyubxsVDp42/223" class="channel-card">
-                <div class="info-part">
-                    <img src="15.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>اجواء رمضان 2026 🌙✨</h3>
-                        <p>كل ما يخص الشهر الفضيل 🕌</p>
-                    </div>
+                <img src="15.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>اجواء رمضان 2026 🌙✨</h3>
+                    <p>استعد للشهر الفضيل بأجمل الحالات والأدعية 🕌</p>
+                    <div class="join-btn">انضم للقناة الآن 🌙</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029VbBTfaxF1YlRLVbInU2R/143" class="channel-card">
-                <div class="info-part">
-                    <img src="16.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>عالم الخلفيات 🖼️📱</h3>
-                        <p>خلفيات بدقة عالية لهاتفك 🌈</p>
-                    </div>
+                <img src="16.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>عالم الخلفيات 🖼️📱</h3>
+                    <p>خلفيات 4K لتزيين هاتفك بكل ما هو جديد 🌈</p>
+                    <div class="join-btn">انضم للقناة الآن 🖼️</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6IHxvBA1etuAv1AP3n/255" class="channel-card">
-                <div class="info-part">
-                    <img src="17.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>صور وفيديوهات حزينه 🎬🥀</h3>
-                        <p>حالات تعبر عما بداخلك 🎞️</p>
-                    </div>
+                <img src="17.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>صور وفيديوهات حزينه 🎬🥀</h3>
+                    <p>مقاطع قصيرة تعبر عن حزنك الصامت 🎞️</p>
+                    <div class="join-btn">انضم للقناة الآن 🥀</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
             <a href="https://whatsapp.com/channel/0029Vb6rki7BlHpe3XheGO0s/128" class="channel-card">
-                <div class="info-part">
-                    <img src="18.jpg" class="channel-img">
-                    <div class="name-part">
-                        <h3>عبارات حب ورومنسي 💌🏹</h3>
-                        <p>رسائل غرامية راقية 💍</p>
-                    </div>
+                <img src="18.jpg" class="channel-img">
+                <div class="channel-details">
+                    <h3>عبارات حب ورومنسي 💌🏹</h3>
+                    <p>كلمات غرامية للعشاق وحالات واتساب راقية 💍</p>
+                    <div class="join-btn">انضم للقناة الآن 💞</div>
                 </div>
-                <div class="join-icon">←</div>
             </a>
 
         </div>
 
         <div class="footer">
             <p>جميع الحقوق محفوظة للجوكر © 2026</p>
-            <a href="https://chat.whatsapp.com/Dc6cwvnLYmcDXNqLZBqXye" style="text-decoration: none; color: var(--whatsapp-dark-green); font-weight: bold;">💬 تواصل مع المطور</a>
+            <a href="https://chat.whatsapp.com/Dc6cwvnLYmcDXNqLZBqXye" class="contact-link">💬 تواصل مع المطور</a>
         </div>
     </div>
 
 </body>
 </html>
-
